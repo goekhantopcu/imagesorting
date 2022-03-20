@@ -22,18 +22,17 @@ public final class ImageSorting {
 
     public static void main(String[] args) {
         final File file = new File(System.getProperty("user.dir"));
-        System.out.println("[ImageSorting] Are you sure that you want sort the images inside this directory:");
-        System.out.println("[ImageSorting] '" + file.getAbsolutePath() + "'");
-        System.out.println("[ImageSorting] Start the sorting by pressing [y/N].");
+        System.out.println("Are you sure that you want sort the images inside this directory: '" + file.getAbsolutePath() + "'");
+        System.out.println("Start the sorting by pressing [y/N].");
         ContinuousConsoleReader.start(input -> {
             try {
                 if (input.equalsIgnoreCase("y")) {
                     final int totalRenaming = doSortFiles(file);
-                    System.out.printf("[ImageSorting] Renamed '%s' files%n", totalRenaming);
+                    System.out.printf("Renamed '%s' files%n", totalRenaming);
                 } else if (input.equalsIgnoreCase("n")) {
-                    System.out.println("[ImageSorting] You successfully terminated the application");
+                    System.out.println("You successfully terminated the application");
                 } else {
-                    System.out.println("[ImageSorting] Press 'y' to start sorting or 'N' to terminate the application.");
+                    System.out.println("Press 'y' to start sorting or 'N' to terminate the application.");
                 }
             } catch (Throwable e) {
                 e.printStackTrace();
@@ -73,7 +72,7 @@ public final class ImageSorting {
             final String name = String.format(NAME_PREFIX, j);
             doRenameFile(before, name);
             renaming++;
-            System.out.printf("[ImageSorting] Renamed '%s' to '%s'%n", before.getName(), name);
+            System.out.printf("Renamed '%s' to '%s'%n", before.getName(), name);
         }
         return renaming;
     }
