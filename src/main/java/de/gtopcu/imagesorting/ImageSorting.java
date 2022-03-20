@@ -31,6 +31,7 @@ public final class ImageSorting {
                     System.out.printf("Renamed '%s' files%n", totalRenaming);
                 } else if (input.equalsIgnoreCase("n")) {
                     System.out.println("You successfully terminated the application");
+                    System.exit(0);
                 } else {
                     System.out.println("Press 'y' to start sorting or 'N' to terminate the application.");
                 }
